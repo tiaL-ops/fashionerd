@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fashion Trends from Pinterest</title>
+</head>
+<body>
+    <h1>Fashion Trends from Pinterest</h1>
+    
+    <div>
+        {% if fashion_data %}
+            <ul>
+                {% for item in fashion_data %}
+                    <li>
+                        <img src="{{ item.url }}" alt="{{ item.description }}" style="max-width: 200px;">
+                        <p>{{ item.description }}</p>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No fashion trends found.</p>
+        {% endif %}
+    </div>
+
+</body>
+</html>
